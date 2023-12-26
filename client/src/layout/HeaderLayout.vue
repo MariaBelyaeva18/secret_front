@@ -3,9 +3,7 @@
     <header>
       Secret Message
     </header>
-
     <slot />
-
   </section>
 </template>
 
