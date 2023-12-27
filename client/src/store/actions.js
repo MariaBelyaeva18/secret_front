@@ -1,12 +1,15 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
-console.log(import.meta.env);
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const useStore = defineStore('uStore', {
   state: () => ({
-    messages: [],
+    messages: {
+      text: '',
+      mesLink: '',
+    },
+    messageLink: null,
   }),
 
   actions: {
@@ -16,8 +19,8 @@ export const useStore = defineStore('uStore', {
     },
 
     async getMessage() {
-      const data = await axios.get(`${apiUrl}/get/${this.messages.link}`);
-      this.messages = data.data;
+      // const data = await axios.get(`${apiUrl}/get/${this.messages.link}`);
+      return this.messages.text;
     },
   },
 });

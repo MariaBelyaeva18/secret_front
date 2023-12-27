@@ -3,7 +3,7 @@
     <header>
       Secret Message
     </header>
-    <slot />
+    <router-view />
   </section>
 </template>
 

@@ -28,8 +28,10 @@ module.exports = {
     'vue',
   ],
   rules: {
+    'import/named': 'off',
     'import/no-unresolved': 'off',
     'import/order': 'off',
+    'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
   },

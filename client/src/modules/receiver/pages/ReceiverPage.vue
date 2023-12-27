@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-
 import GetCard from '../components/GetCard.vue';
 </script>
 
