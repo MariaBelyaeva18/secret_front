@@ -6,21 +6,25 @@ const apiUrl = import.meta.env.VITE_API_URL;
 export const useStore = defineStore('uStore', {
   state: () => ({
     messages: {
-      text: '',
-      mesLink: '',
+      message: '',
+      route: '',
     },
+    text: {
+      message: '',
+    },
+    currentPath: '',
     messageLink: null,
+    err: '',
   }),
 
   actions: {
     async sendMessage() {
-      const data = await axios.post(`${apiUrl}/message`);
-      this.messages = data.data;
+      await axios.post(`${apiUrl}/message`, this.messages);
     },
 
     async getMessage() {
-      // const data = await axios.get(`${apiUrl}/get/${this.messages.link}`);
-      return this.messages.text;
+      const data = await axios.get(`${apiUrl}${this.currentPath}`);
+      this.text.message = data.data;
     },
   },
 });

@@ -3,7 +3,7 @@
     <b>Your Message: </b>
 
     <div>
-      <span>{{this.text}}</span>
+      <span>{{this.store.text.message}}</span>
     </div>
 
     <div class="button">
@@ -23,16 +23,9 @@ export default {
       text: '',
     };
   },
-
-  methods: {
-    async loadData() {
-      this.text = await this.store.getMessage();
-      return this.text;
-    },
-  },
-
   mounted() {
-    this.loadData();
+    this.store.currentPath = window.location.pathname;
+    this.store.getMessage();
   },
 };
 </script>

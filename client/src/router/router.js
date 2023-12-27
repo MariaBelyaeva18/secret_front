@@ -4,7 +4,7 @@ import ReceiverPage from '@/modules/receiver/pages/ReceiverPage.vue';
 
 const routes = [
   { path: '/', component: SenderPage },
-  { path: '/get/:mesLink', component: ReceiverPage },
+  { path: '/:route', component: ReceiverPage },
 ];
 
 export const router = createRouter({
